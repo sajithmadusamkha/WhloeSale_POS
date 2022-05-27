@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="733.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.wholeSalePos.controller.ManageItemsFormController">
+   <children>
+      <ImageView fx:id="imgHome" fitHeight="40.0" fitWidth="40.0" layoutX="22.0" layoutY="14.0" onMouseClicked="#navigateOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/home.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="76.0" layoutY="20.0" text="Manage Items">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="21.0" layoutY="70.0" prefHeight="0.0" prefWidth="628.0" />
+      <JFXButton buttonType="RAISED" layoutX="555.0" layoutY="19.0" style="-fx-background-color: #0AA1DD;" text="+ New Item" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="109.0" prefHeight="25.0" prefWidth="628.0" promptText="Item Code :">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="169.0" prefHeight="25.0" prefWidth="628.0" promptText="Item Description :">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="227.0" prefHeight="25.0" prefWidth="628.0" promptText="Pack Size :">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="286.0" prefHeight="25.0" prefWidth="628.0" promptText="Unit Price :">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="342.0" prefHeight="25.0" prefWidth="628.0" promptText="Qty. on Hand :">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </JFXTextField>
+      <TableView layoutX="21.0" layoutY="463.0" prefHeight="256.0" prefWidth="628.0">
+        <columns>
+          <TableColumn prefWidth="85.0" text="Code" />
+          <TableColumn prefWidth="245.0" text="Description" />
+            <TableColumn prefWidth="83.0" text="Pack Size" />
+            <TableColumn prefWidth="109.0" text="Qty. on Hand" />
+            <TableColumn prefWidth="105.0" text="Unit Price" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="228.0" layoutY="404.0" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: #14C38E;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="345.0" layoutY="404.0" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: #F24C4C;" text="Delete" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
