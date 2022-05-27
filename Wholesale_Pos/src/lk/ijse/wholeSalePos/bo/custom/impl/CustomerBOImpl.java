@@ -1,7 +1,7 @@
 package lk.ijse.wholeSalePos.bo.custom.impl;
 
 import lk.ijse.wholeSalePos.bo.custom.CustomerBO;
-import lk.ijse.wholeSalePos.dao.CustomerDAO;
+import lk.ijse.wholeSalePos.dao.custom.CustomerDAO;
 import lk.ijse.wholeSalePos.dao.DAOFactory;
 import lk.ijse.wholeSalePos.dto.CustomerDTO;
 import lk.ijse.wholeSalePos.entity.Customer;

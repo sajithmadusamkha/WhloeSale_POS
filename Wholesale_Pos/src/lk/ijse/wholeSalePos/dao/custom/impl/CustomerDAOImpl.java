@@ -1,12 +1,14 @@
-package lk.ijse.wholeSalePos.dao;
+package lk.ijse.wholeSalePos.dao.custom.impl;
 
+import lk.ijse.wholeSalePos.dao.SQLUtil;
+import lk.ijse.wholeSalePos.dao.custom.CustomerDAO;
 import lk.ijse.wholeSalePos.entity.Customer;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CustomerDAOImpl implements CustomerDAO{
+public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public ArrayList<Customer> getAll() throws ClassNotFoundException, SQLException {
         ResultSet set = SQLUtil.executeQuery("SELECT * FROM Customer");
