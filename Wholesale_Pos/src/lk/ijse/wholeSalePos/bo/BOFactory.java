@@ -1,6 +1,7 @@
 package lk.ijse.wholeSalePos.bo;
 
 import lk.ijse.wholeSalePos.bo.custom.impl.CustomerBOImpl;
+import lk.ijse.wholeSalePos.bo.custom.impl.ItemBOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -25,7 +26,7 @@ public class BOFactory {
             case CUSTOMER:
                 return new CustomerBOImpl(); //SuperBO superBO = new CustomerBOImpl();
             case ITEM:
-                return null;
+                return new ItemBOImpl();
             case PLACE_ORDER:
                 return null;
             default:
