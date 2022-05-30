@@ -26,7 +26,7 @@
             <Font name="Calibri Bold" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="629.0" layoutY="25.0" prefHeight="24.0" prefWidth="152.0" text="ORDER ID : OM001">
+      <Label alignment="CENTER_RIGHT" layoutX="629.0" layoutY="25.0" prefHeight="24.0" prefWidth="152.0" text="ORDER ID : M-001">
          <font>
             <Font name="Calibri" size="19.0" />
          </font>
