@@ -24,51 +24,51 @@
          </font>
       </Label>
       <Separator layoutX="21.0" layoutY="70.0" prefHeight="0.0" prefWidth="628.0" />
-      <JFXButton buttonType="RAISED" layoutX="555.0" layoutY="19.0" style="-fx-background-color: #0AA1DD;" text="+ New Item" textFill="WHITE">
+      <JFXButton fx:id="btnAddNewItem" buttonType="RAISED" layoutX="555.0" layoutY="19.0" onAction="#btnNewItemOnAction" style="-fx-background-color: #0AA1DD;" text="+ New Item" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="109.0" prefHeight="25.0" prefWidth="628.0" promptText="Item Code :">
+      <JFXTextField fx:id="txtItemCode" focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="109.0" prefHeight="25.0" prefWidth="628.0" promptText="Item Code :">
          <font>
             <Font name="Calibri" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="169.0" prefHeight="25.0" prefWidth="628.0" promptText="Item Description :">
+      <JFXTextField fx:id="txtDescription" focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="169.0" prefHeight="25.0" prefWidth="628.0" promptText="Item Description :">
          <font>
             <Font name="Calibri" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="227.0" prefHeight="25.0" prefWidth="628.0" promptText="Pack Size :">
+      <JFXTextField fx:id="txtPackSize" focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="227.0" prefHeight="25.0" prefWidth="628.0" promptText="Pack Size :">
          <font>
             <Font name="Calibri" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="286.0" prefHeight="25.0" prefWidth="628.0" promptText="Unit Price :">
+      <JFXTextField fx:id="txtUnitPrice" focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="286.0" prefHeight="25.0" prefWidth="628.0" promptText="Unit Price :">
          <font>
             <Font name="Calibri" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="342.0" prefHeight="25.0" prefWidth="628.0" promptText="Qty. on Hand :">
+      <JFXTextField fx:id="txtQtyOnHand" focusColor="#0d85b5" labelFloat="true" layoutX="21.0" layoutY="342.0" prefHeight="25.0" prefWidth="628.0" promptText="Qty. on Hand :">
          <font>
             <Font name="Calibri" size="14.0" />
          </font>
       </JFXTextField>
-      <TableView layoutX="21.0" layoutY="463.0" prefHeight="256.0" prefWidth="628.0">
+      <TableView fx:id="tblItems" layoutX="21.0" layoutY="463.0" prefHeight="256.0" prefWidth="628.0">
         <columns>
           <TableColumn prefWidth="85.0" text="Code" />
           <TableColumn prefWidth="245.0" text="Description" />
             <TableColumn prefWidth="83.0" text="Pack Size" />
-            <TableColumn prefWidth="109.0" text="Qty. on Hand" />
-            <TableColumn prefWidth="105.0" text="Unit Price" />
+            <TableColumn prefWidth="109.0" text="Unit Price" />
+            <TableColumn prefWidth="105.0" text="Qty. on Hand" />
         </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="228.0" layoutY="404.0" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: #14C38E;" text="Save" textFill="WHITE">
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="228.0" layoutY="404.0" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: #14C38E;" text="Save" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="345.0" layoutY="404.0" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: #F24C4C;" text="Delete" textFill="WHITE">
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="345.0" layoutY="404.0" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: #F24C4C;" text="Delete" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

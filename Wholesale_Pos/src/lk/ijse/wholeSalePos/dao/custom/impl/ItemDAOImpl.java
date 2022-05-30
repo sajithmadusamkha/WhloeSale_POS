@@ -31,12 +31,16 @@ public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public Item search(String itemCode) throws ClassNotFoundException, SQLException {
+        ResultSet set = SQLUtil.executeQuery("SELECT * FROM Item WHERE code=?", itemCode);
+        if (set.next()) {
+            return new Item(set.getString(1),set.getString(2),set.getString(3),set.getBigDecimal(4),set.getInt(5));
+        }
         return null;
     }
 
     @Override
     public boolean exist(String itemCode) throws ClassNotFoundException, SQLException {
-        return SQLUtil.executeUpdate("SELECT itemCode FROM Item WHERE itemCode=?",itemCode);
+        return SQLUtil.executeQuery("SELECT itemCode FROM Item WHERE itemCode=?",itemCode).next();
     }
 
     @Override
