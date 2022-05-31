@@ -15,7 +15,7 @@ public interface MakeOrderBO extends SuperBO {
 
     ItemDTO searchItem(String code) throws ClassNotFoundException , SQLException;
 
-    boolean checkCustomerIsAvailable(String code) throws ClassNotFoundException , SQLException;
+    boolean checkCustomerIsAvailable(String id) throws ClassNotFoundException , SQLException;
 
     boolean checkItemIsAvailable(String code) throws ClassNotFoundException , SQLException;
 
