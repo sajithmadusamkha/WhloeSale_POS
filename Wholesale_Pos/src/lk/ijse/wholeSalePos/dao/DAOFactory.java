@@ -2,6 +2,7 @@ package lk.ijse.wholeSalePos.dao;
 
 import lk.ijse.wholeSalePos.dao.custom.impl.CustomerDAOImpl;
 import lk.ijse.wholeSalePos.dao.custom.impl.ItemDAOImpl;
+import lk.ijse.wholeSalePos.dao.custom.impl.OrderDetailDAOImpl;
 import lk.ijse.wholeSalePos.dao.custom.impl.OrdersDAOImpl;
 
 public class DAOFactory {
@@ -31,6 +32,8 @@ public class DAOFactory {
                 return new ItemDAOImpl();
             case ORDER:
                 return new OrdersDAOImpl();
+            case ORDERDETAILS:
+                return new OrderDetailDAOImpl();
             default:
                 return null;
         }
