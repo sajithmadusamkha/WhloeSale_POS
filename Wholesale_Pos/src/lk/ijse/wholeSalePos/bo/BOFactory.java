@@ -2,6 +2,7 @@ package lk.ijse.wholeSalePos.bo;
 
 import lk.ijse.wholeSalePos.bo.custom.impl.CustomerBOImpl;
 import lk.ijse.wholeSalePos.bo.custom.impl.ItemBOImpl;
+import lk.ijse.wholeSalePos.bo.custom.impl.MakeOrderBOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -18,7 +19,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        CUSTOMER,ITEM,PLACE_ORDER
+        CUSTOMER,ITEM,MAKE_ORDER
     }
 
     public SuperBO getBO(BOTypes boTypes){
@@ -26,9 +27,9 @@ public class BOFactory {
             case CUSTOMER:
                 return new CustomerBOImpl(); //SuperBO superBO = new CustomerBOImpl();
             case ITEM:
-                return new ItemBOImpl();
-            case PLACE_ORDER:
-                return null;
+                return new ItemBOImpl(); //SuperBO superBO = new ItemBOImpl();
+            case MAKE_ORDER:
+                return new MakeOrderBOImpl(); //SuperBO superBO = new MakeOrderBOImpl();
             default:
                 return null;
         }

@@ -248,14 +248,6 @@ public class ManageCustomerFormController {
         return customerBO.customerExist(id);
     }
 
-    public void navigateOnAction(MouseEvent mouseEvent) throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("/lk/ijse/wholeSalePos/view/MainForm.fxml"));
-        Scene subScene = new Scene(parent);
-        Stage stage = (Stage) this.customerRoot.getScene().getWindow();
-        stage.setScene(subScene);
-        stage.centerOnScreen();
-    }
-
     private String generateNewId(){
         try {
             return customerBO.generateNewCustomerId();
@@ -278,5 +270,14 @@ public class ManageCustomerFormController {
         List<CustomerTM> tempCustomerTMList = new ArrayList<>(tblCustomer.getItems());
         Collections.sort(tempCustomerTMList);
         return tempCustomerTMList.get(tempCustomerTMList.size() -1 ).getCustId();
+    }
+
+
+    public void navigateOnAction(MouseEvent mouseEvent) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("/lk/ijse/wholeSalePos/view/MainForm.fxml"));
+        Scene subScene = new Scene(parent);
+        Stage stage = (Stage) this.customerRoot.getScene().getWindow();
+        stage.setScene(subScene);
+        stage.centerOnScreen();
     }
 }

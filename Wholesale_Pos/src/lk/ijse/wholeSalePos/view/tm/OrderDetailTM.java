@@ -7,6 +7,9 @@ public class OrderDetailTM {
     private String itemCode;
     private int orderQty;
     private BigDecimal discount;
+    private  BigDecimal unitPrice;
+    private BigDecimal total;
+    private String description;
 
     public OrderDetailTM() {
     }
@@ -16,6 +19,39 @@ public class OrderDetailTM {
         this.itemCode = itemCode;
         this.orderQty = orderQty;
         this.discount = discount;
+    }
+
+    public OrderDetailTM(String itemCode, String description, int qty, BigDecimal unitPrice, BigDecimal discount, BigDecimal total) {
+        this.itemCode = itemCode;
+        this.description = description;
+        this.orderQty = qty;
+        this.unitPrice = unitPrice;
+        this.discount = discount;
+        this.total = total;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public BigDecimal getTotal() {
+        return total;
+    }
+
+    public void setTotal(BigDecimal total) {
+        this.total = total;
     }
 
     public String getOrderId() {

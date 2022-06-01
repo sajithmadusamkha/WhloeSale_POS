@@ -22,6 +22,7 @@ public class MainFormController{
     public ImageView imgAdminLogin;
     public AnchorPane root;
     public ImageView imgCustomer;
+    public ImageView imgManageOrder;
 
     public void mouseEnterOnAction(MouseEvent mouseEvent) {
         if(mouseEvent.getSource() instanceof ImageView){
@@ -33,7 +34,11 @@ public class MainFormController{
                     break;
                 case "imgCustomer":
                     lblWelcome.setText("Manage Customer");
-                    lblOperation.setText("Add, edit, delete, search or view customers");
+                    lblOperation.setText("Add, edit, delete, search or view customers.");
+                    break;
+                case "imgManageOrder":
+                    lblWelcome.setText("Manage Customer Order");
+                    lblOperation.setText("Modify order details, Remove orders.");
             }
 
             DropShadow shadow = new DropShadow();
@@ -74,6 +79,8 @@ public class MainFormController{
                 case "imgCustomer":
                     root = FXMLLoader.load(getClass().getResource("/lk/ijse/wholeSalePos/view/ManageCustomerForm.fxml"));
                     break;
+                case "imgManageOrder":
+                    root = FXMLLoader.load(getClass().getResource("/lk/ijse/wholeSalePos/view/ManageCustomerOrderForm.fxml"));
             }
 
             if (root != null){

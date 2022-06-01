@@ -92,7 +92,7 @@ public class MakeOrderBOImpl implements MakeOrderBO {
     }
 
     @Override
-    public String generateNewOrderId(String id) throws ClassNotFoundException, SQLException {
+    public String generateNewOrderId() throws ClassNotFoundException, SQLException {
         return ordersDAO.generateNewId();
     }
 

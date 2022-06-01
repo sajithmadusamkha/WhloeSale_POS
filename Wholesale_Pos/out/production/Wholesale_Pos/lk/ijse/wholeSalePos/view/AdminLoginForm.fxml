@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,12 +15,19 @@
             <Image url="@images/user.png" />
          </image>
       </ImageView>
-      <JFXTextField labelFloat="true" layoutX="90.0" layoutY="194.0" prefHeight="30.0" prefWidth="290.0" promptText="Enter your password" />
-      <JFXTextField labelFloat="true" layoutX="90.0" layoutY="122.0" prefHeight="30.0" prefWidth="290.0" promptText="Enter your username" />
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="90.0" layoutY="122.0" prefHeight="30.0" prefWidth="290.0" promptText="Enter your username">
+         <font>
+            <Font name="Calibri" size="15.0" />
+         </font></JFXTextField>
       <JFXButton buttonType="RAISED" layoutX="189.0" layoutY="255.0" onAction="#loginOnAction" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #0AA1DD;" text="Login" textFill="WHITE">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>
       </JFXButton>
+      <JFXPasswordField fx:id="txtPwd" labelFloat="true" layoutX="90.0" layoutY="194.0" prefHeight="25.0" prefWidth="290.0" promptText="Enter your password">
+         <font>
+            <Font name="Calibri" size="15.0" />
+         </font>
+      </JFXPasswordField>
    </children>
 </AnchorPane>

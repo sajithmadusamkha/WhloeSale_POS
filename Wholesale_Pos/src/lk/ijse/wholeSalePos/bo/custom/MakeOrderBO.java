@@ -19,7 +19,7 @@ public interface MakeOrderBO extends SuperBO {
 
     boolean checkItemIsAvailable(String code) throws ClassNotFoundException , SQLException;
 
-    String generateNewOrderId(String id) throws ClassNotFoundException , SQLException;
+    String generateNewOrderId() throws ClassNotFoundException , SQLException;
 
     ArrayList<CustomerDTO> getAllCustomers() throws ClassNotFoundException , SQLException;
 
