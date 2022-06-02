@@ -228,10 +228,10 @@ public class MakeOrderFormController {
         String description = txtItemDescription.getText();
         BigDecimal unitPrice = new BigDecimal(txtUnitPrice.getText()).setScale(2);
         int qty = Integer.parseInt(txtQty.getText());
-        BigDecimal discount = new BigDecimal(txtDiscount.getText()).setScale(2);
         BigDecimal total = unitPrice.multiply(new BigDecimal(qty)).setScale(2);
-        BigDecimal discountTot = discount.multiply(new BigDecimal(qty)).setScale(2);
-        BigDecimal totAfterDiscount = total.subtract(discountTot);
+        BigDecimal discount = new BigDecimal(txtDiscount.getText()).setScale(2);
+        BigDecimal discountTot = total.multiply(discount).divide(BigDecimal.valueOf(100)).setScale(2);
+        BigDecimal totAfterDiscount = total.subtract(discountTot).setScale(2);
 
         boolean exists = tblOrderDetails.getItems().stream().anyMatch(detail -> detail.getItemCode().equals(itemCode));
 
