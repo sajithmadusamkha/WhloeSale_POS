@@ -27,7 +27,7 @@ public class OrdersDAOImpl implements OrdersDAO {
 
     @Override
     public Orders search(String id) throws ClassNotFoundException, SQLException {
-        ResultSet set = SQLUtil.executeQuery("SELECT * FROM `Orders` WHERE custId=?", id);
+        ResultSet set = SQLUtil.executeQuery("SELECT * FROM `Orders` WHERE orderId=?", id);
         if(set.next()){
             return new Orders(set.getString(1), LocalDate.parse(set.getString(2)),set.getString(3));
         }
@@ -54,5 +54,15 @@ public class OrdersDAOImpl implements OrdersDAO {
         } else {
             return "M-001";
         }
+    }
+
+    @Override
+    public ArrayList<Orders> getOrderIdByCustomerId(String id) throws SQLException, ClassNotFoundException {
+        ResultSet set = SQLUtil.executeQuery("SELECT * FROM `Orders` WHERE custId=?",id);
+        ArrayList<Orders> allOrderIds = new ArrayList<>();
+        while (set.next()){
+            allOrderIds.add(new Orders(set.getString(1),LocalDate.parse(set.getString(2)),set.getString(3)));
+        }
+        return allOrderIds;
     }
 }

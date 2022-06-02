@@ -27,6 +27,16 @@ public class ManageOrderBOImpl implements ManageOrderBO {
     }
 
     @Override
+    public ArrayList<OrdersDTO> getAllOrdersByCustomerId(String id) throws ClassNotFoundException, SQLException {
+        ArrayList<Orders> all = ordersDAO.getOrderIdByCustomerId(id);
+        ArrayList<OrdersDTO> allIds = new ArrayList<>();
+        for(Orders o : all){
+            allIds.add(new OrdersDTO(o.getOrderId(),o.getOrderDate(),o.getCustId()));
+        }
+        return allIds;
+    }
+
+    @Override
     public CustomerDTO searchCustomer(String id) throws ClassNotFoundException, SQLException {
         Customer c = customerDAO.search(id);
         return new CustomerDTO(c.getCustId(),c.getCustTitle(),c.getCustName(),c.getCustAddress(),c.getCity(),c.getProvince(),c.getPostalCode());

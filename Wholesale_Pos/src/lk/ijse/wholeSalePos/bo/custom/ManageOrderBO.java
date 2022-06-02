@@ -12,6 +12,8 @@ import java.util.ArrayList;
 public interface ManageOrderBO extends SuperBO {
     ArrayList<CustomerDTO> getAllCustomers() throws ClassNotFoundException , SQLException;
 
+    ArrayList<OrdersDTO> getAllOrdersByCustomerId(String id) throws ClassNotFoundException , SQLException;
+
     CustomerDTO searchCustomer(String id) throws ClassNotFoundException , SQLException;
 
     OrdersDTO searchOrders(String id) throws ClassNotFoundException , SQLException;

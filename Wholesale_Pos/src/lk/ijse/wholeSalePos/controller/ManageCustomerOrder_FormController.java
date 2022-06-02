@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import lk.ijse.wholeSalePos.bo.BOFactory;
 import lk.ijse.wholeSalePos.bo.custom.ManageOrderBO;
 import lk.ijse.wholeSalePos.dto.CustomerDTO;
+import lk.ijse.wholeSalePos.dto.OrderDetailDTO;
 import lk.ijse.wholeSalePos.dto.OrdersDTO;
 import lk.ijse.wholeSalePos.view.tm.OrderDetailTM;
 
@@ -37,8 +38,13 @@ public class ManageCustomerOrder_FormController {
         cmbCustomerIds.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue != null){
                 try {
-                    OrdersDTO search = manageOrderBO.searchOrders(newValue + "");
-                    tblOrderNo.getItems().add(new OrderDetailTM(search.getOrderId()));
+                    //OrdersDTO search = manageOrderBO.searchOrders(newValue + "");
+                    //tblOrderNo.getItems().add(new OrderDetailTM(search.getOrderId()));
+                    //ArrayList<OrdersDTO> allIds = manageOrderBO.searchOrders(newValue + "");
+                    ArrayList<OrdersDTO> search = manageOrderBO.getAllOrdersByCustomerId(newValue + "");
+                    for(OrdersDTO o : search){
+                        tblOrderNo.getItems().add(new OrderDetailTM());
+                    }
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 } catch (SQLException e) {
