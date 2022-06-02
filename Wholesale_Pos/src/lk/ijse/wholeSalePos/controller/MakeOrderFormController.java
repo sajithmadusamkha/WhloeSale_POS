@@ -39,8 +39,6 @@ public class MakeOrderFormController {
     public JFXButton btnAddCus;
     public AnchorPane placeOrderRoot;
     public ImageView imgHome;
-
-    private final MakeOrderBO makeOrderBO = (MakeOrderBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MAKE_ORDER);
     public Label lblOrderId;
     public Label lblDate;
     public JFXComboBox<String> cmbCustomerIds;
@@ -56,6 +54,8 @@ public class MakeOrderFormController {
     public Label lblTotal;
     public JFXButton btnPlaceOrder;
     private String orderId;
+
+    private final MakeOrderBO makeOrderBO = (MakeOrderBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MAKE_ORDER);
 
     public void initialize(){
         tblOrderDetails.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("itemCode"));

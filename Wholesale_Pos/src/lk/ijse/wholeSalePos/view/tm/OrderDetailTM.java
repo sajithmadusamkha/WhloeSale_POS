@@ -14,6 +14,10 @@ public class OrderDetailTM {
     public OrderDetailTM() {
     }
 
+    public OrderDetailTM(String orderId) {
+        this.orderId = orderId;
+    }
+
     public OrderDetailTM(String orderId, String itemCode, int orderQty, BigDecimal discount) {
         this.orderId = orderId;
         this.itemCode = itemCode;

@@ -6,6 +6,7 @@ import lk.ijse.wholeSalePos.entity.Orders;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class OrdersDAOImpl implements OrdersDAO {
@@ -26,6 +27,10 @@ public class OrdersDAOImpl implements OrdersDAO {
 
     @Override
     public Orders search(String id) throws ClassNotFoundException, SQLException {
+        ResultSet set = SQLUtil.executeQuery("SELECT * FROM `Orders` WHERE custId=?", id);
+        if(set.next()){
+            return new Orders(set.getString(1), LocalDate.parse(set.getString(2)),set.getString(3));
+        }
         return null;
     }
 
