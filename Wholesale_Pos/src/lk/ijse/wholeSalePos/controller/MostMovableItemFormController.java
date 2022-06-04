@@ -50,21 +50,6 @@ public class MostMovableItemFormController {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-        /*tblAllItems.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("orderId"));
-        tblAllItems.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("itemCode"));
-        tblAllItems.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("orderQty"));
-
-        try {
-            ArrayList<OrderDetailDTO> allOrders = orderDetailBO.getAllOrderDetails();
-            for(OrderDetailDTO o : allOrders){
-                tblAllItems.getItems().add(new OrderDetailTM(o.getOrderId(),o.getItemCode(),o.getOrderQty()));
-            }
-        } catch (ClassNotFoundException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }*/
     }
 
     public void navigateOnAction(MouseEvent mouseEvent) throws IOException {

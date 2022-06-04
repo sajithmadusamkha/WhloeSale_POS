@@ -8,4 +8,6 @@ import java.util.ArrayList;
 
 public interface OrderDetailBO extends SuperBO {
     ArrayList<OrderDetailDTO> getAllOrderDetails() throws ClassNotFoundException , SQLException;
+
+    ArrayList<OrderDetailDTO> getAllOderDetailByOrderId(String newValue) throws ClassNotFoundException , SQLException;
 }

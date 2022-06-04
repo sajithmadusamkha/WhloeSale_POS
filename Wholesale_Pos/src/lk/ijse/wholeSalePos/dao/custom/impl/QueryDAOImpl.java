@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class QueryDAOImpl implements QueryDAO {
     @Override
-    public ArrayList<CustomEntity> searchOrderByOrderID(String id) throws SQLException, ClassNotFoundException {
+    public ArrayList<CustomEntity> searchOrderByOrderID(String newValue) throws SQLException, ClassNotFoundException {
         return null;
     }
 

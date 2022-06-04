@@ -1,5 +1,7 @@
 package lk.ijse.wholeSalePos.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,9 +15,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.wholeSalePos.bo.BOFactory;
 import lk.ijse.wholeSalePos.bo.custom.ManageOrderBO;
+import lk.ijse.wholeSalePos.bo.custom.OrderDetailBO;
 import lk.ijse.wholeSalePos.dto.CustomerDTO;
+import lk.ijse.wholeSalePos.dto.OrderDetailDTO;
 import lk.ijse.wholeSalePos.dto.OrdersDTO;
+import lk.ijse.wholeSalePos.entity.OrderDetail;
 import lk.ijse.wholeSalePos.view.tm.OrderDetailTM;
+import lk.ijse.wholeSalePos.view.tm.OrderNoTM;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -26,20 +32,42 @@ public class ManageCustomerOrder_FormController {
     public ImageView imgHome;
     public AnchorPane mngOrderRoot;
     public ComboBox cmbCustomerIds;
-    public TableView<OrderDetailTM> tblOrderNo;
+    public TableView<OrderNoTM> tblOrderNo;
+    public TableView<OrderDetailTM> tblOrderDetails;
 
     private final ManageOrderBO manageOrderBO = (ManageOrderBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MANAGE_ORDER);
+    private final OrderDetailBO orderDetailBO = (OrderDetailBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ORDER_DETAIL);
 
     public void initialize(){
 
         tblOrderNo.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("orderId"));
+
+        tblOrderDetails.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("orderId"));
+        tblOrderDetails.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("itemCode"));
+        tblOrderDetails.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("orderQty"));
+        tblOrderDetails.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("discount"));
 
         cmbCustomerIds.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue != null){
                 try {
                     ArrayList<OrdersDTO> search = manageOrderBO.getAllOrdersByCustomerId(newValue + "");
                     for(OrdersDTO o : search){
-                        tblOrderNo.getItems().add(new OrderDetailTM(o.getOrderId()));
+                        tblOrderNo.getItems().add(new OrderNoTM(o.getOrderId()));
+                    }
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+       tblOrderNo.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue != null){
+                try {
+                    ArrayList<OrderDetailDTO> search = orderDetailBO.getAllOderDetailByOrderId(newValue + "");
+                    for(OrderDetailDTO o : search){
+                        tblOrderDetails.getItems().add(new OrderDetailTM(o.getOrderId(),o.getItemCode(),o.getOrderQty(),o.getDiscount()));
                     }
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
