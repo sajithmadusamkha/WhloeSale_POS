@@ -14,6 +14,12 @@ public class OrderDetailTM {
     public OrderDetailTM() {
     }
 
+    public OrderDetailTM(String orderId, String itemCode, int orderQty) {
+        this.orderId = orderId;
+        this.itemCode = itemCode;
+        this.orderQty = orderQty;
+    }
+
     public OrderDetailTM(String orderId) {
         this.orderId = orderId;
     }

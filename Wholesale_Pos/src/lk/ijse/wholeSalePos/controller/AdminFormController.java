@@ -13,8 +13,9 @@ import java.io.IOException;
 public class AdminFormController {
     public AnchorPane admin;
     public ImageView imgHome;
-    public ImageView imgSystemReport;
     public ImageView imgManageItems;
+    public ImageView imgMostMovable;
+    public ImageView imgLeastMovable;
 
     public void navigateOnAction(MouseEvent mouseEvent) throws IOException {
         if(mouseEvent.getSource() instanceof ImageView){
@@ -26,12 +27,14 @@ public class AdminFormController {
                 case "imgHome":
                     root = FXMLLoader.load(getClass().getResource("/lk/ijse/wholeSalePos/view/MainForm.fxml"));
                     break;
-                case "imgSystemReport":
-                    root = FXMLLoader.load(getClass().getResource("/lk/ijse/wholeSalePos/view/SystemReportForm.fxml"));
-                    break;
                 case "imgManageItems":
                     root = FXMLLoader.load(getClass().getResource("/lk/ijse/wholeSalePos/view/ManageItemsForm.fxml"));
                     break;
+                case "imgMostMovable":
+                    root = FXMLLoader.load(getClass().getResource("/lk/ijse/wholeSalePos/view/MostMovableItemForm.fxml"));
+                    break;
+                case "imgLeastMovable":
+                    root = FXMLLoader.load(getClass().getResource("/lk/ijse/wholeSalePos/view/LeastMovableItemForm.fxml"));
             }
 
             if (root != null){

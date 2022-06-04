@@ -1,9 +1,6 @@
 package lk.ijse.wholeSalePos.dao;
 
-import lk.ijse.wholeSalePos.dao.custom.impl.CustomerDAOImpl;
-import lk.ijse.wholeSalePos.dao.custom.impl.ItemDAOImpl;
-import lk.ijse.wholeSalePos.dao.custom.impl.OrderDetailDAOImpl;
-import lk.ijse.wholeSalePos.dao.custom.impl.OrdersDAOImpl;
+import lk.ijse.wholeSalePos.dao.custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -34,6 +31,8 @@ public class DAOFactory {
                 return new OrdersDAOImpl();
             case ORDERDETAILS:
                 return new OrderDetailDAOImpl();
+            case QUERYDAO:
+                return new QueryDAOImpl();
             default:
                 return null;
         }

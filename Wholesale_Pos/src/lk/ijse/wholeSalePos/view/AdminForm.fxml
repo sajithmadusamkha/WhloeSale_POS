@@ -14,31 +14,41 @@
             <Image url="@images/home.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgSystemReport" fitHeight="100.0" fitWidth="100.0" layoutX="513.0" layoutY="189.0" onMouseClicked="#navigateOnAction" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/report.png" />
-         </image>
-      </ImageView>
       <Separator layoutX="26.0" layoutY="83.0" prefHeight="0.0" prefWidth="749.0" />
       <Label layoutX="288.0" layoutY="26.0" text="Admin Dashboard">
          <font>
             <Font name="Calibri Bold" size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgManageItems" fitHeight="100.0" fitWidth="100.0" layoutX="189.0" layoutY="189.0" onMouseClicked="#navigateOnAction" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgManageItems" fitHeight="100.0" fitWidth="100.0" layoutX="93.0" layoutY="189.0" onMouseClicked="#navigateOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/inventory.png" />
          </image>
       </ImageView>
-      <Label layoutX="173.0" layoutY="304.0" text="Manage Items" textFill="#ff4949">
+      <Label layoutX="77.0" layoutY="304.0" text="Manage Items" textFill="#ff4949">
          <font>
             <Font name="Calibri Bold" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="513.0" layoutY="304.0" text="System Repots" textFill="#ff4949">
+      <Label layoutX="310.0" layoutY="304.0" text="Most Movable Item" textFill="#ff4949">
          <font>
             <Font name="Calibri Bold" size="22.0" />
          </font>
       </Label>
+      <ImageView fx:id="imgMostMovable" fitHeight="100.0" fitWidth="100.0" layoutX="351.0" layoutY="189.0" onMouseClicked="#navigateOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/profits.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="563.0" layoutY="304.0" text="Least Movable Item" textFill="#ff4949">
+         <font>
+            <Font name="Calibri Bold" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgLeastMovable" fitHeight="100.0" fitWidth="100.0" layoutX="604.0" layoutY="189.0" onMouseClicked="#navigateOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/lost.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

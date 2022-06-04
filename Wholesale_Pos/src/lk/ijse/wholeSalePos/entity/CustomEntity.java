@@ -46,6 +46,14 @@ public class CustomEntity {
         this.discount = discount;
     }
 
+    public CustomEntity(String itemCode, String description, String pacSize, BigDecimal unitPrice, int orderQty) {
+        this.itemCode = itemCode;
+        this.description = description;
+        this.pacSize = pacSize;
+        this.unitPrice = unitPrice;
+        this.orderQty = orderQty;
+    }
+
     public String getCustId() {
         return custId;
     }

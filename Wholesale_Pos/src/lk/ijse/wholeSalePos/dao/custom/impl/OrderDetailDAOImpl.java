@@ -2,15 +2,22 @@ package lk.ijse.wholeSalePos.dao.custom.impl;
 
 import lk.ijse.wholeSalePos.dao.SQLUtil;
 import lk.ijse.wholeSalePos.dao.custom.OrderDetailDAO;
-import lk.ijse.wholeSalePos.entity.OrderDetail;
+import lk.ijse.wholeSalePos.entity.Item;import lk.ijse.wholeSalePos.entity.OrderDetail;
 
+import java.math.BigDecimal;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class OrderDetailDAOImpl implements OrderDetailDAO {
     @Override
     public ArrayList<OrderDetail> getAll() throws ClassNotFoundException, SQLException {
-        return null;
+        ResultSet set = SQLUtil.executeQuery("SELECT * FROM OrderDetail ORDER BY orderQty DESC");
+        ArrayList<OrderDetail> allDet = new ArrayList<>();
+        while (set.next()){
+            allDet.add(new OrderDetail(set.getString(1),set.getString(2),set.getInt(3),set.getBigDecimal(4)));
+        }
+        return allDet;
     }
 
     @Override
